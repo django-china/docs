@@ -1,2 +1,2 @@
-# Django-Documents
+# Django Documentation
 
