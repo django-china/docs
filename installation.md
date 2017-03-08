@@ -4,7 +4,7 @@
     - [服务器要求](#服务器要求)
     - [安装 Django](#安装Django)
     - [配置](#配置)
-- [Web 服务器配置](#Web服务器配置)
+- [Web服务器配置](#Web服务器配置)
     - [美化 URLs](#美化URLs)
 
 <a name="installation"></a>
