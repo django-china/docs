@@ -32,13 +32,21 @@ Django 使用[pip](https://pypi.python.org/pypi/pip) 来管理代码的依赖。
 
 1.安装[pip](https://pip.pypa.io),最简单的是使用独立pip安装程序。如果您的发行版已经安装了pip，您可能需要更新它。
   如果它已过时，你会知道，因为安装将无法正常工作。
-2.看看[virtualenv](https://virtualenv.pypa.io/)和[virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)。这些工具提供了孤立的Python环境，这比在系统范围内安装包更实用。他们还允许安装没有管理员权限的软件包。
-  参与的教程将介绍如何在Python 3上创建virtualenv。
+
+2.看看[virtualenv](https://virtualenv.pypa.io/)和[virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)。这些工具提供了孤立的Python环境，这比在系统范围内安装包更实用。他们还允许安装没有管理员权限的软件包。参与的教程将介绍如何在
+Python3上创建virtualenv。
+
 3.创建并激活虚拟环境后，在shell提示符处输入`pip install Django`
 
 #### 通过安装最新版的软件包
 
 如果您使用Linux或Unix安装（如OpenSolaris），请与您的经销商联系，查看他们是否已经打包Django。如果你使用Linux发行版，不知道如何找到一个软件包是否可用，那么现在是学习的好时机。Django Wiki包含[第三方分发列表](https://code.djangoproject.com/wiki/Distributions)，以帮助您。
+
+#### 创建一个Django应用
+
+你可以在终端中通过Django的 `startproject` 命令来创建Django应用：
+
+    django-admin startproject django_admin
 
 #### 本地开发环境
 
