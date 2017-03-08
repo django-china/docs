@@ -46,7 +46,7 @@ Python3上创建virtualenv。
 
 你可以在终端中通过Django的 `startproject` 命令来创建Django应用：
 
-    django-admin startproject mysite
+    django-admin startproject app
 
 #### 本地开发环境
 
