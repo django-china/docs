@@ -6,7 +6,6 @@
     - [设置当前的环境配置](#determining-the-current-environment)
     - [创建你自己的设置](#create-your-configuration)
 - [访问配置值](#accessing-configuration-values)
-- [维护模式](#maintenance-mode)
 
 <a name="introduction"></a>
 ## 简介
