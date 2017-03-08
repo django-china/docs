@@ -24,7 +24,7 @@
 
 当你使用Django 时，你必须告诉它你正在使用哪个设置。这可以使用环境变量DJANGO_SETTINGS_MODULE 来实现。
 
-`DJANGO_SETTINGS_MODULE` 的值应该使用Python 路径的语法，例如`mysite.settings`。注意，设置模块应该在Python的导入查找路径中。
+`DJANGO_SETTINGS_MODULE` 的值应该使用Python 路径的语法，例如`app.settings`。注意，设置模块应该在Python的导入查找路径中。
 
 #### django-admin 工具
 
@@ -32,24 +32,24 @@
 
 例如（Unix Bash shell）：
 
-    export DJANGO_SETTINGS_MODULE=mysite.settings
+    export DJANGO_SETTINGS_MODULE=app.settings
     django-admin runserver
 
 例如（Windows shell）：
 
-    set DJANGO_SETTINGS_MODULE=mysite.settings
+    set DJANGO_SETTINGS_MODULE=app.settings
     django-admin runserver
 
 使用--settings 命令行参数可以手工指定设置：
 
-    django-admin runserver --settings=mysite.settings
+    django-admin runserver --settings=app.settings
 
 #### 在服务器上(mod_wsgi)
 
 在线上服务器环境中，你需要告诉WSGI 的application 使用哪个设置文件。可以使用os.environ 实现：
 
     import os
-    os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'app.settings'
 
 阅读[Django mod_wsgi 文档](http://python.usyiyi.cn/documents/django_182/howto/deployment/wsgi/modwsgi.html)以获得关于Django WSGI application 的更多和其它常见信息。
 
