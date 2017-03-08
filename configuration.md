@@ -20,13 +20,13 @@
 <a name="determining-the-current-settings"></a>
 ### 指定设置文件
 
-`DJANGO_SETTINGS_MODULE`
+#### DJANGO_SETTINGS_MODULE
 
 当你使用Django 时，你必须告诉它你正在使用哪个设置。这可以使用环境变量DJANGO_SETTINGS_MODULE 来实现。
 
 `DJANGO_SETTINGS_MODULE` 的值应该使用Python 路径的语法，例如`mysite.settings`。注意，设置模块应该在Python的导入查找路径中。
 
-`django-admin 工具`
+#### django-admin 工具
 
 当使用django-admin 时， 你可以设置临时环境变量，或者每次运行该工具时显式传递设置模块。
 
@@ -44,7 +44,7 @@
 
     django-admin runserver --settings=mysite.settings
 
-**在服务器上(mod_wsgi)**
+#### 在服务器上(mod_wsgi)
 
 在线上服务器环境中，你需要告诉WSGI 的application 使用哪个设置文件。可以使用os.environ 实现：
 
@@ -61,7 +61,7 @@
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
 
-`查看改变的设置`
+#### 查看改变的设置
 
 有一个简单的方法可以查看哪些设置与默认的设置不一样了。`python manage.py diffsettings` 命令显示当前的设置文件和Django 默认设置之间的差异。
 
@@ -77,7 +77,7 @@
 
 对于序列类型的设置，Django 自己使用元组而不是列表，但这只是一个习惯。
 
-`不用DJANGO_SETTINGS_MODULE 设置`
+#### 不用DJANGO_SETTINGS_MODULE 设置
 
 有些情况下，你可能想绕开`DJANGO_SETTINGS_MODULE` 环境变量。例如，如果你正在使用自己的模板系统，而你不想建立指向设置模块的环境变量。
 
@@ -97,7 +97,7 @@
 
 所以，当通过`settings.configure()` 配置时，Django 不会对进程的环境变量做任何修改（参见`TIME_ZONE` 文档以了解为什么会发生）。在这些情况下，它假设你已经完全控制你的环境变量。
 
-`自定义默认的设置`
+#### 自定义默认的设置
 
 如果你想让默认值来自其它地方而不是`django.conf.global_settings`，你可以传递一个提供默认设置的模块或类作为`default_settings` 参数（或第一个位置参数）给`configure()` 调用。
 
@@ -114,7 +114,7 @@
 
 正常情况下，你不需要用这种方式覆盖默认值。Django 的默认值足够好使，你可以安全地使用它们。注意，如果你传递一个新的默认模块，你将完全取代 Django 的默认值，所以你必须指定每个可能用到的设置的值。完整的设置清单，参见django.conf.settings.global_settings
 
-`configure() 和DJANGO_SETTINGS_MODULE 两者必居其一`
+#### configure() 和DJANGO_SETTINGS_MODULE 两者必居其一
 
 如果你没有设置`DJANGO_SETTINGS_MODULE` 环境变量，你 必须 在使用到读取设置的任何代码之前调用`configure()` 。
 
