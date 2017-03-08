@@ -1,11 +1,11 @@
 # 安装
 
-- [安装](#安装)
-    - [服务器要求](#服务器要求)
-    - [安装 Django](#安装Django)
-    - [配置](#配置)
-- [Web服务器配置](#Web服务器配置)
-    - [美化 URLs](#美化URLs)
+- [安装](#installation)
+    - [服务器要求](#server-requirements)
+    - [安装 Django](#installing-django)
+    - [配置](#configuration)
+- [Web服务器配置](#web-server-configuration)
+    - [美化 URLs](#pretty-urls)
 
 <a name="installation"></a>
 ## 安装
