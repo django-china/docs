@@ -7,17 +7,7 @@
     - [`app` 文件夹](#the-root-app-directory)
     - [`manage.py`文件](#the-manage-file)
 - [站点目录](#the-site-directory)
-    - [`__init__.py`文件](#the-site-init-file)
-    - [`settings.py`文件](#the-site-settings-file)
-    - [`urls.py`文件](#the-site-urls-file)
-    - [`wsgi.py`文件](#the-site-wsgi-file)
 - [App目录](#the-app-directory)
-    - [`migrations` 文件夹](#the-app-migrations-directory)
-    - [`__init__.py`文件](#the-app-init-file)
-    - [`admin.py`文件](#the-app-admin-file)
-    - [`model.py`文件](#the-app-model-file)
-    - [`tests.py`文件](#the-app-tests-file)
-    - [`views.py`文件](#the-app-views-file)
 
 <a name="introduction"></a>
 ## 简介
