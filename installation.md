@@ -71,7 +71,7 @@ Django 几乎不需要其它任何配置就可以正常开发使用了。但是�
 ## Web服务器配置
 
 <a name="pretty-urls"></a>
-### Pretty URLs
+### 美化URLs
 
 #### Apache
 
