@@ -1,4 +1,4 @@
-# Directory Structure
+# 目录结构
 
 - [简介](#introduction)
 - [创建你的应用程序](#create-your-app)
