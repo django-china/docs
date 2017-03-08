@@ -4,8 +4,8 @@
     - [服务器要求](#服务器要求)
     - [安装 Django](#安装Django)
     - [配置](#配置)
-- [Web 服务器配置](#Web 服务器配置)
-    - [美化 URLs](#美化 URLs)
+- [Web 服务器配置](#Web服务器配置)
+    - [美化 URLs](#美化URLs)
 
 <a name="installation"></a>
 ## 安装
@@ -68,7 +68,7 @@ Django 几乎不需要其它任何配置就可以正常开发使用了。但是�
 </div>
 
 <a name="web-server-configuration"></a>
-## Web 服务器配置
+## Web服务器配置
 
 <a name="pretty-urls"></a>
 ### Pretty URLs
