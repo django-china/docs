@@ -22,6 +22,7 @@ Django 默认的目录结构意在为构建不同大小的应用提供一个好�
 您在Django中编写的每个应用程序都包含遵循特定约定的Python包。Django提供了一个自动生成应用程序的基本目录结构的实用程序，所以您可以专注于编写代码，而不是创建目录
 
 > **项目与应用程序**
+
 > 项目和应用程序之间有什么区别？应用程序是一个执行某些操作的Web应用程序 - 例如Weblog系统，公共记录数据库或简单的轮询应用程序。项目是特定网站的配置和应用程序的集合。项目可以包含多个应用程序。应用程序可以在多个项目中。
 
 要创建您的应用程序，请确保您位于相同的目录中，manage.py 然后键入以下命令：
@@ -43,37 +44,46 @@ Django 对类在何处被加载没有任何限制 -- 只要 站点目录的 `set
 
 #### 页面模版目录在哪里?
 
-When getting started with Laravel, many developers are confused by the lack of a `models` directory. However, the lack of such a directory is intentional. We find the word "models" ambiguous since it means many different things to many different people. Some developers refer to an application's "model" as the totality of all of its business logic, while others refer to "models" as classes that interact with a relational database.
+许多初学者都会困惑 Laravel 为什么没有 models 目录,当然，这是 laravel 故意为之，因为 models 这个词对不同开发者而言有不同的含义，容易造成歧义，有些开发者认为应用的模型指的是业务逻辑，还有些开发者则认为模型指的是与关联数据库的交互。
 
-For this reason, we choose to place Eloquent models in the `app` directory by default, and allow the developer to place them somewhere else if they choose.
+正是因为如此，我们默认将 Eloquent 的模型放置到 app 目录下，从而允许开发者自行选择放置的位置。
 
 <a name="the-root-directory"></a>
 ## 根目录
 
-<a name="the-root-app-directory"></a>
-#### App文件夹
+<a name="the-root-site-directory"></a>
+### 站点文件夹
 
-The `app` directory, as you might expect, contains the core code of your application. We'll explore this directory in more detail soon; however, almost all of the classes in your application will be in this directory.
+`站点` 目录，顾名思义，包含所有应用程序的配置文件。通读这些配置文件可以应对自己对配置修改的需求。
+
+<a name="the-root-app-directory"></a>
+### App文件夹
+
+`app` 目录，如你所料，这里面包含应用程序的核心代码。另外，你为应用编写的代码绝大多数也会放到这里， 我们之后将很快对这个目录的细节进行深入探讨。
 
 <a name="the-manage-file"></a>
-#### manage.py文件
+### manage.py文件
 
-The `bootstrap` directory contains files that bootstrap the framework and configure autoloading. This directory also houses a `cache` directory which contains framework generated files for performance optimization such as the route and services cache files.
+`manage.py`是一个命令行实用程序，允许您以各种方式与此Django项目进行交互。您可以阅读[django-admin和manage.pymanage.py](https://docs.djangoproject.com/en/1.10/ref/django-admin/)中的所有详细信息。
+
+<a name="the-site-directory"></a>
+## 站点目录
+
+`__init__.py` 文件是个空文件，告诉Python该目录应该被视为一个Python包。（如果你是Python初学者，请阅读官方Python文档中的[软件包](https://docs.python.org/tutorial/modules.html#packages)。）
+`settings.py` 文件包含了此Django项目的设置/配置。 [Django设置](https://docs.djangoproject.com/en/1.8/topics/settings/)会告诉你所有关于设置如何工作.
+`urls.py` 文件包含了Django项目的URL声明; 您的Django供电网站的“目录”。您可以在[网址调度程序](https://docs.djangoproject.com/en/1.8/topics/http/urls/)中详细了解网址。
+`wsgl.py` 文件包含了与WSGI兼容的Web服务器为您的项目提供服务的入口点。有关更多详细信息，请参阅[如何使用WSGI](https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/)进行部署。
 
 <a name="the-app-directory"></a>
 ## App目录
 
-The majority of your application is housed in the `app` directory. By default, this directory is namespaced under `App` and is autoloaded by Composer using the [PSR-4 autoloading standard](http://www.php-fig.org/psr/psr-4/).
+`migrations` 目录包含了数据迁移及填充文件，你还可以将其作为 SQLite 数据库的存放目录。
+`__init__.py` 文件是个空文件，告诉Python该目录应该被视为一个Python包。
+`admin.py` 文件用户设置Django 数据模型的管理后台应用程序配置文件。
+`models.py` 文件包含了当前应用程序的模型类。
+`tests.py` 文件包含了自动化测试。每一个测试类都需要添加 Test 前缀，你可以使用 `python manage.py test` 命令来运行测试。
+`views.py` 文件包含了所有的控制器方法，用于处理HTTP请求的数据或者和`Templates`页面模版交互的。
 
-The `app` directory contains a variety of additional directories such as `Console`, `Http`, and `Providers`. Think of the `Console` and `Http` directories as providing an API into the core of your application. The HTTP protocol and CLI are both mechanisms to interact with your application, but do not actually contain application logic. In other words, they are simply two ways of issuing commands to your application. The `Console` directory contains all of your Artisan commands, while the `Http` directory contains your controllers, middleware, and requests.
 
-A variety of other directories will be generated inside the `app` directory as you use the `make` Artisan commands to generate classes. So, for example, the `app/Jobs` directory will not exist until you execute the `make:job` Artisan command to generate a job class.
-
-> {tip} Many of the classes in the `app` directory can be generated by Artisan via commands. To review the available commands, run the `php artisan list make` command in your terminal.
-
-<a name="the-init-directory"></a>
-#### The Console Directory
-
-The `Console` directory contains all of the custom Artisan commands for your application. These commands may be generated using the `make:command` command. This directory also houses your console kernel, which is where your custom Artisan commands are registered and your [scheduled tasks](/docs/{{version}}/scheduling) are defined.
 
 
