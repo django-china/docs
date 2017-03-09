@@ -1,0 +1,18 @@
+# Routing
+
+- [Basic Routing](#basic-routing)
+- [Route Parameters](#route-parameters)
+    - [Required Parameters](#required-parameters)
+    - [Optional Parameters](#parameters-optional-parameters)
+    - [Regular Expression Constraints](#parameters-regular-expression-constraints)
+- [Named Routes](#named-routes)
+- [Route Groups](#route-groups)
+    - [Middleware](#route-group-middleware)
+    - [Namespaces](#route-group-namespaces)
+    - [Sub-Domain Routing](#route-group-sub-domain-routing)
+    - [Route Prefixes](#route-group-prefixes)
+- [Route Model Binding](#route-model-binding)
+    - [Implicit Binding](#implicit-binding)
+    - [Explicit Binding](#explicit-binding)
+- [Form Method Spoofing](#form-method-spoofing)
+- [Accessing The Current Route](#accessing-the-current-route)
