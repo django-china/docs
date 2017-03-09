@@ -70,18 +70,26 @@ Django 对类在何处被加载没有任何限制 -- 只要 站点目录的 `set
 ## 站点目录
 
 `__init__.py` 文件是个空文件，告诉Python该目录应该被视为一个Python包。（如果你是Python初学者，请阅读官方Python文档中的[软件包](https://docs.python.org/tutorial/modules.html#packages)。）
+
 `settings.py` 文件包含了此Django项目的设置/配置。 [Django设置](https://docs.djangoproject.com/en/1.8/topics/settings/)会告诉你所有关于设置如何工作.
+
 `urls.py` 文件包含了Django项目的URL声明; 您的Django供电网站的“目录”。您可以在[网址调度程序](https://docs.djangoproject.com/en/1.8/topics/http/urls/)中详细了解网址。
+
 `wsgl.py` 文件包含了与WSGI兼容的Web服务器为您的项目提供服务的入口点。有关更多详细信息，请参阅[如何使用WSGI](https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/)进行部署。
 
 <a name="the-app-directory"></a>
 ## App目录
 
 `migrations` 目录包含了数据迁移及填充文件，你还可以将其作为 SQLite 数据库的存放目录。
+
 `__init__.py` 文件是个空文件，告诉Python该目录应该被视为一个Python包。
+
 `admin.py` 文件用户设置Django 数据模型的管理后台应用程序配置文件。
+
 `models.py` 文件包含了当前应用程序的模型类。
+
 `tests.py` 文件包含了自动化测试。每一个测试类都需要添加 Test 前缀，你可以使用 `python manage.py test` 命令来运行测试。
+
 `views.py` 文件包含了所有的控制器方法，用于处理HTTP请求的数据或者和`Templates`页面模版交互的。
 
 
